@@ -50,3 +50,6 @@ operation 3 = /
 
 
 //  to simply put it , the number of the operation grows roughly proportionally with n
+
+
+

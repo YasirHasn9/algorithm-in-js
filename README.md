@@ -20,10 +20,23 @@ it is a way to normalize fuzzy counting for the number of the operation. it allo
 
 for now , we are gonna focus on 3 time complexity
 
-liner O(n) which the number of operation grows as long as the n grows
+Liner O(n) which the number of operation grows as long as the n grows
 
 # if we have n = 100 --> operations = 100
 
 Quadratic O(n^2) the number of operations doubles the number of n
 
 # if n = 100 --> operations = n^2 = 100000
+
+Constant O(1) the number of operations is stable no matter how big is the n
+
+# if n = 100 ---> operations = constant number
+
+some Big O shorthands but not true all the time
+
+1. Arithmetic operations are constant
+2. variable assignment is constant
+3. accessing an element by index of an array of object by key is constant
+4. in a loop , the complexity is the length of the loop times whatever happens inside the loop.
+
+**_ object are fast than array at pretty much everything but there is no order , arrays are great when you need to order stuff and its better to add and remove from the end _**
