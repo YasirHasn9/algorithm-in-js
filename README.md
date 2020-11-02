@@ -57,10 +57,37 @@ and most importantly , you need it in interviews.
 4. solve/ simply
 5. look back and refactor
 
-# Understand the Problem
+## Understand the Problem
 
 1. can i restate the problem in my own words ?
 2. what is the inputs ?
 3. what is the output ?
 4. can the outputs determined from the inputs ?
 5. how could i label the important things ?
+
+## Explore concrete example
+
+give an example of the output like , if you are require to write a function
+that adds 2 numbers
+you can think of 2 + 3 = 5
+and also think of the edge cases, wha will stop you from getting the results ?
+
+## Break down
+
+do not think of the problem as a whole thing but make it as small steps
+and think it out as piece by piece
+
+## Solve/simply
+
+## solve
+
+now , it is the time to execute . try to solve it and if you can't try to solve a simple problem.
+this, mentally will help to show something for yourself and also it better than thinking of something
+that makes doing zero progress
+
+## simply
+
+1. find the code difficulty in what are trying to do
+2. temporarily ignore that difficulty
+3. write a simplified solution
+4. incorporate that difficulty back in
