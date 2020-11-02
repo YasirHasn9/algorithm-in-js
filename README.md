@@ -39,4 +39,28 @@ some Big O shorthands but not true all the time
 3. accessing an element by index of an array of object by key is constant
 4. in a loop , the complexity is the length of the loop times whatever happens inside the loop.
 
-**_ object are fast than array at pretty much everything but there is no order , arrays are great when you need to order stuff and its better to add and remove from the end _**
+**\_ object are fast than array at pretty much everything but there is no order , arrays are great when you need to order stuff and its better to add and remove from the end \***
+
+# To understand what is the big o notation , you need to understand what is algorithm ?
+
+simply, it is a process or set of steps to solve a problem or accomplish a mission
+
+but hey, why do we need to this ?
+almost everything in programming is algorithm . and personally , i feel we don't only use algorithm in programming but in everything even when it comes to cook food , you have to do specific task to finish your cooking
+and most importantly , you need it in interviews.
+
+# how can i improve my skills at problems solving ?
+
+1. try to understand the problems
+2. explore concrete example
+3. break it down
+4. solve/ simply
+5. look back and refactor
+
+# Understand the Problem
+
+1. can i restate the problem in my own words ?
+2. what is the inputs ?
+3. what is the output ?
+4. can the outputs determined from the inputs ?
+5. how could i label the important things ?
