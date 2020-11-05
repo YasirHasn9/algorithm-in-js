@@ -1,6 +1,8 @@
 // Frequency counter uses objects or sets to collect the value/frequencies of values 
 // this often avoid nested loop or N^2  operations with array/strings
-// this useful when you have multiple pieces of data and required to find the frequencies when you compared them to find find something that occurs 
+// this useful when you have multiple pieces of data and required to
+//  find the frequencies when you compared them to find find something that occurs 
+// this approach avoid the need of O(n^2) through nested loops
 
 // challenge 
 // write a function called same, which accepts 2 arrays. 

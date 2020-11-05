@@ -21,7 +21,8 @@ function countUniquesValues(sortedArr){
       count++
       currentIndex
     } else {
-      nextIndex++1
+      nextIndex++
     }
   }
+  return count + 1
 }
