@@ -1,7 +1,7 @@
 // Frequency counter uses objects or sets to collect the value/frequencies of values 
 // this often avoid nested loop or N^2  operations with array/strings
 // this useful when you have multiple pieces of data and required to
-//  find the frequencies when you compared them to find find something that occurs 
+//  find the frequencies when you compared them to find something that occurs 
 // this approach avoid the need of O(n^2) through nested loops
 
 // challenge 
@@ -21,24 +21,30 @@ function same_1(arr1, arr2){
   }
   // loop over each num in arr1 and compared to arr2 to find its squared value
   for(let i = 0 ; i < arr1.length ; i++){
-    // we are gonna check the squared value of arr1[i] in arr2[i] by using built-in function called indexOf(value)
-    let correctIndex = arr2.indexOf(arr1[i] ** 2) // will return the index of the element
+    // we are gonna check the squared value of arr1[i] in arr2[i] by 
+    // using built-in function called indexOf(value)
+    // will return the index of the element
+    let correctIndex = arr2.indexOf(arr1[i] ** 2)
     if(correctIndex === -1){
       return false
     }
-    // splice remove and add elements
+    // splice to remove the element at the correctIndex
     arr2.splice(correctIndex , 1)
   }
 
   return true 
 }
 
+
+
+
 // refactor solution 
 function same_2(arr1, arr2){
   if(arr1.length !== arr2.length){
     return false
   }
-  // in these 2 objects , im gonna add each num as a key and count how many time has been occurred 
+  // in these 2 objects , im gonna add each num as a key and count how many 
+  // time has been occurred 
   let frequencyCounter1 = {}
   let frequencyCounter2 = {}
   for(let num of arr1){
