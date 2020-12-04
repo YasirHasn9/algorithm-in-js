@@ -24,6 +24,7 @@ function same_1(arr1, arr2){
     // we are gonna check the squared value of arr1[i] in arr2[i] by 
     // using built-in function called indexOf(value)
     // will return the index of the element
+    // here like asking what is the index of the arr[i]**2 in arr2
     let correctIndex = arr2.indexOf(arr1[i] ** 2)
     if(correctIndex === -1){
       return false
@@ -62,6 +63,7 @@ function same_2(arr1, arr2){
     if(!(key **2 in frequencyCounter2)){
       return false
     }
+    // here  is like checking how many times does it occur ?
     if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
       return false
     }
