@@ -65,7 +65,7 @@ function sumZero(arr){
 
 
 
-
+// third  way
 function sumWithMap(arr){
     let map = new Map()
     for(const num of arr){
@@ -114,7 +114,6 @@ function findU(arr){
             obj[arr[i]] = 1
         }
     }
-
     return Object.keys(obj).length
 }
 

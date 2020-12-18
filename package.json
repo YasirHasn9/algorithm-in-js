@@ -1,0 +1,23 @@
+{
+  "name": "algorithm-in-js",
+  "version": "1.0.0",
+  "description": "understanding the big O notation before we dive into the O(n) , we have couple things to dive into. for instance , what is better code mean to you ? faster ? less memory? more readable ?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasirHasn9/algorithm-in-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YasirHasn9/algorithm-in-js/issues"
+  },
+  "homepage": "https://github.com/YasirHasn9/algorithm-in-js#readme",
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
+}
