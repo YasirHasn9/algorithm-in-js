@@ -32,3 +32,18 @@ function maxSubarraySum(arr:number[] , num:number):number{
     }
     return max
 }
+
+// another way to solve 
+function maxSum(arr:number[] , num:number):number {
+    let maxSum = 0
+    let temp = 0
+    for(let i = 0 ; i < num ; i ++){
+        temp += arr[i]
+    }
+
+    for(let i = num ; i < arr.length ; i++){
+        temp = temp - arr[i - num] + arr[i]
+        maxSum = Math.max(maxSum , temp)
+    }
+    return temp
+}
