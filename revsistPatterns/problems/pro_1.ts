@@ -3,7 +3,7 @@ Write a function called sameFrequency. Given 2 positive intergers, find out if t
 Your solution must be : Time O(N)
 */
 
-function sameFrequency(num1: number, num2: number): boolean {
+function sameFrequency(num1: number | string, num2: number | string): boolean {
     //   1. convert the number to string
     //   since we cannot iterate over a number
     //   we convert the numbers to string;
