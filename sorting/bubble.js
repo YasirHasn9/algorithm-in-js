@@ -29,5 +29,25 @@ function betterBubbleSort(arr) {
   return arr;
 }
 
-console.log(bubbleSort([3, 2, 22, 1, 10, 0]));
-console.log(betterBubbleSort([3, 2, 22, 1, 10, 0]));
+function bubbleEs6(arr) {
+  const swap = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
+  let noSwap;
+  for (let i = arr.length; i > 0; i--) {
+    noSwap = true;
+    for (let j = 0; j < i - 1; j++) {
+      // console.log(arr, arr[j], arr[j + 1]);
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+        noSwap = false;
+      }
+    }
+    if (noSwap) break;
+  }
+  return arr;
+}
+
+console.log(bubbleSort([8, 1, 2, 3, 4, 5, 6, 7]));
+console.log(betterBubbleSort([8, 1, 2, 3, 4, 5, 6, 7]));
+console.log(bubbleEs6([8, 1, 2, 3, 4]));
