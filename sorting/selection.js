@@ -27,22 +27,18 @@ function selectionSort(arr) {
 // assume the first ele is the smallest one 
 // loop again from the second item 
 // check the if there is a smaller ele than the assumed one
-
+const swap = (arr,idx1,idx2) => [ arr[idx1] , arr[idx2] ] = [arr[idx2] , arr[idx1] ]
 function sele(arr){
   let idx = 0 
   for(let i = 0 ; i < arr.length ; i++){
     for(let j =  i + 1 ; j < arr.length ; j++){
 
       if(arr[idx] > arr[j]){
-        console.log("*****")
-        console.log(arr)
-        // [arr[idx] , arr[j]] = [arr[j] , arr[idx]]
-        console.log("swap to")
-        let temp = arr[idx]
-        arr[idx] = arr[j]
-        arr[j] = temp
-        console.log(arr)
-        console.log("********")
+        // console.log(idx, j)
+        // let temp = arr[idx]
+        // arr[idx] = arr[j]
+        // arr[j] = temp
+        swap(arr, idx, j)
       }
     }
     idx++
@@ -50,4 +46,4 @@ function sele(arr){
   return arr
 }
 
-console.log(sele([34, 22, 10, 19, 17]));
+console.log(sele([ 34, 22,0, 10, 19, 17]));
