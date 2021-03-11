@@ -21,7 +21,7 @@ function selectionSort(arr) {
 }
 // console.log(selectionSort([8, 1, 2, 3, 4, 5, 6, 7]));
 // console.log(selectionSort([8, 1, 2, 3, 4, 5, 6, 7]));
-console.log(selectionSort([34, 22, 10, 19, 17]));
+// console.log(selectionSort([34, 22, 10, 19, 17]));
 
 
 // assume the first ele is the smallest one 
@@ -31,9 +31,18 @@ console.log(selectionSort([34, 22, 10, 19, 17]));
 function sele(arr){
   let idx = 0 
   for(let i = 0 ; i < arr.length ; i++){
-    for(let j = i + 1 ; j < arr.length ; j++){
+    for(let j =  i + 1 ; j < arr.length ; j++){
+
       if(arr[idx] > arr[j]){
-        [arr[idx] , arr[j]] = [arr[j] , arr[idx]]
+        console.log("*****")
+        console.log(arr)
+        // [arr[idx] , arr[j]] = [arr[j] , arr[idx]]
+        console.log("swap to")
+        let temp = arr[idx]
+        arr[idx] = arr[j]
+        arr[j] = temp
+        console.log(arr)
+        console.log("********")
       }
     }
     idx++
