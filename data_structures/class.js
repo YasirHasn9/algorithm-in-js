@@ -55,3 +55,20 @@ joe.markLate();
 joe.markLate();
 joe.markAbsent();
 console.log(joe);
+
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static distance(a, b) {
+    let dx = a.x - b.x;
+    let dy = a.y - b.y;
+    return Math.hypot(dx * dy);
+  }
+}
+
+let p1 = new Point(10, 15);
+let p2 = new Point(5, 9);
+console.log(Point.distance(p1, p2));
