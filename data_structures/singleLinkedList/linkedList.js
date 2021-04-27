@@ -86,6 +86,32 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  find(index) {
+    // edge cases
+    if (index < 0 || index >= this.length) return -1;
+    // let found = null;
+    // let count = 0;
+    // let cur = this.head;
+    // while (cur) {
+    //   found = cur;
+    //   if (count === index) {
+    //     return found;
+    //   }
+    //   count++;
+    //   cur = cur.next;
+    // }
+    // return -1;
+    // another way
+
+    let count = 0;
+    let cur = this.head;
+    while (count !== index) {
+      count++;
+      cur = cur.next;
+    }
+    return cur;
+  }
 }
 // [1 --> 2 ---> 3 ---> 4 ---> null]
 let list = new SinglyLinkedList();
@@ -109,6 +135,11 @@ let list = new SinglyLinkedList();
 // console.log(list.length);
 
 // unshifting pushing new node to the beginning of the list
+// console.log(list.unshift("second"));
+// console.log(list.unshift("first"));
+// console.log(list.find());
 
-console.log(list.unshift("second"));
-console.log(list.unshift("first"));
+// find element that corresponds to the index
+// list.unshift("second");
+// list.unshift("first");
+// console.log(list.find(2));
