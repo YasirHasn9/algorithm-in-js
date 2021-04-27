@@ -112,6 +112,40 @@ class SinglyLinkedList {
     }
     return cur;
   }
+
+  set(index, val) {
+    // if (index < 0 || index >= this.length) return -1;
+    // let count = 0;
+    // let cur = this.head;
+    // while (count !== index) {
+    //   count++;
+    //   cur = cur.next;
+    // }
+    // if (count === index) {
+    //   cur.value = val;
+    // }
+    // return cur;
+    // another solution
+    let cur = this.find(index);
+    if (cur !== -1) {
+      cur.value = val;
+      return this;
+    } else {
+      return -1;
+    }
+  }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) return false;
+    if (index === 0) return !!this.unshift(val);
+    if (index === this.length) return !!this.push(val);
+    let newNode = new Node(val);
+    let prev = this.find(index - 1);
+    newNode.next = prev.next;
+    prev.next = newNode;
+    this.length++;
+    return true;
+  }
 }
 // [1 --> 2 ---> 3 ---> 4 ---> null]
 let list = new SinglyLinkedList();
@@ -142,4 +176,19 @@ let list = new SinglyLinkedList();
 // find element that corresponds to the index
 // list.unshift("second");
 // list.unshift("first");
+// console.log(list.find(2));
+
+// set a new value for the a specific node depends on its index
+// list.push(1);
+// list.push(2);
+// list.push(4);
+// console.log(list.set(2, 3));
+// console.log(list.find(2));
+
+// insert a new node at specific index
+list.push(1);
+list.push(2);
+list.push(4);
+console.log(list.insert(3, 3));
+// console.log(list);
 // console.log(list.find(2));
