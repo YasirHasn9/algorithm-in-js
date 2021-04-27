@@ -51,7 +51,9 @@ class SinglyLinkedList {
       cur = cur.next;
     }
     temp.next = null;
-    cur = temp;
+    this.tail = temp;
+    this.length -= 1;
+    return cur;
   }
 }
 // [1 --> 2 ---> 3 ---> 4 ---> null]
@@ -63,6 +65,8 @@ list.push(4);
 list.push(5);
 list.push(6);
 list.push(7);
+console.log("len before", list.length);
 list.pop();
 
 list.traverse();
+console.log("len after", list.length);
