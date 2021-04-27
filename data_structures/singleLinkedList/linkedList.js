@@ -69,11 +69,28 @@ class SinglyLinkedList {
     if (this.length === 0) this.tail = null;
     return cur;
   }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      // if we dont use the else scope, the code would executed every time we add one node
+      // which will give us an object that referees to itself over and over again
+      // this else statement would protect us from that
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+
+    this.length++;
+    return this;
+  }
 }
 // [1 --> 2 ---> 3 ---> 4 ---> null]
 let list = new SinglyLinkedList();
-list.push(1);
-list.push(2);
+// list.push(1);
+// list.push(2);
 // pop the last node in the array
 // console.log("1", list.length); //2
 // list.pop();
@@ -84,9 +101,14 @@ list.push(2);
 // console.log("4", list.length); // -1
 
 // delete the first node in the list
-list.shift();
-list.shift();
-list.shift();
-console.log("this is head", list.head);
-console.log("this is tail", list.tail);
-console.log(list.length);
+// list.shift();
+// list.shift();
+// list.shift();
+// console.log("this is head", list.head);
+// console.log("this is tail", list.tail);
+// console.log(list.length);
+
+// unshifting pushing new node to the beginning of the list
+
+console.log(list.unshift("second"));
+console.log(list.unshift("first"));
