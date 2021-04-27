@@ -53,6 +53,20 @@ class SinglyLinkedList {
     temp.next = null;
     this.tail = temp;
     this.length -= 1;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+      return "List is empty";
+    }
+    return cur;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+    let cur = this.head;
+    this.head = this.head.next;
+    this.length--;
+    if (this.length === 0) this.tail = null;
     return cur;
   }
 }
@@ -60,13 +74,19 @@ class SinglyLinkedList {
 let list = new SinglyLinkedList();
 list.push(1);
 list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
-list.push(6);
-list.push(7);
-console.log("len before", list.length);
-list.pop();
+// pop the last node in the array
+// console.log("1", list.length); //2
+// list.pop();
+// console.log("2", list.length); // 1
+// list.pop();
+// console.log("3", list.length); // 0
+// list.pop();
+// console.log("4", list.length); // -1
 
-list.traverse();
-console.log("len after", list.length);
+// delete the first node in the list
+list.shift();
+list.shift();
+list.shift();
+console.log("this is head", list.head);
+console.log("this is tail", list.tail);
+console.log(list.length);
