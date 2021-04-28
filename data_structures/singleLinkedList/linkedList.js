@@ -146,6 +146,20 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  remove(index) {
+    // if (!this.head) return "List is empty";
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === this.length - 1) return !!this.pop();
+    if (index === 0) return !!this.shift();
+
+    let prev = this.find(index - 1);
+    let deleted = this.find(index);
+    prev.next = deleted.next;
+    cur = null;
+    this.length--;
+    return deleted;
+  }
 }
 // [1 --> 2 ---> 3 ---> 4 ---> null]
 let list = new SinglyLinkedList();
@@ -186,9 +200,17 @@ let list = new SinglyLinkedList();
 // console.log(list.find(2));
 
 // insert a new node at specific index
-list.push(1);
-list.push(2);
-list.push(4);
-console.log(list.insert(3, 3));
+// list.push(1);
+// list.push(2);
+// list.push(4);
 // console.log(list);
 // console.log(list.find(2));
+
+// remove a node at specific index
+// list.push(0);
+// list.push(1);
+// list.push(2);
+// // console.log(list.length);
+// list.remove(2);
+// // console.log(list);
+// list.traverse();
