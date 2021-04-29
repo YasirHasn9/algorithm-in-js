@@ -40,6 +40,14 @@ class SinglyLinkedList {
       this.head = this.head.next;
     }
   }
+  print() {
+    let arr = [];
+    while (this.head) {
+      arr.push(this.head.value);
+      this.head = this.head.next;
+    }
+    console.log(arr);
+  }
   pop() {
     if (!this.head) {
       return undefined;
@@ -160,6 +168,33 @@ class SinglyLinkedList {
     this.length--;
     return deleted;
   }
+
+  reverse() {
+    // [1 ----> 2 ----  3 ----> null]
+    // let prev = null; // [1]
+    // let cur = this.head; // [1],[2]
+    // while (cur) {
+    //   // if cur has a value then iterate
+    //   let next = cur.next; // make a new var hold the next node for the current node [2],[3], [null]
+    //   cur.next = prev; // to hold the pervious node [null],[1], [2]
+    //   prev = cur; // [1],[2],[3]
+    //   cur = next; // [2],[3],[null]
+    // }
+    // this.head = prev;
+
+    // another solution
+    let node = this.head;
+    this.head = this.tail;
+    let prev = null;
+    let next;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
 }
 // [1 --> 2 ---> 3 ---> 4 ---> null]
 let list = new SinglyLinkedList();
@@ -214,3 +249,9 @@ let list = new SinglyLinkedList();
 // list.remove(2);
 // // console.log(list);
 // list.traverse();
+
+// reverse
+list.push(1);
+list.push(2);
+list.push(3);
+console.log(list.reverse());
