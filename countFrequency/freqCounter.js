@@ -2,8 +2,8 @@
 // if every value in the first array has its corresponding value in the second array.
 
 // for example
-let arr1 = [1, 2, 3];
-let arr2 = [9, 4, 1];
+let arr1 = [1, 2, 3, 2];
+let arr2 = [9, 4, 1, 4];
 // brute-force
 // loop over the first array
 //    double each item
@@ -32,4 +32,22 @@ function countFreq_2(arr1, arr2) {
   }
   return true;
 }
-console.log(countFreq_2(arr1, arr2));
+// console.log(countFreq_2(arr1, arr2));
+
+function countFreq_3(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+  let obj1 = {};
+  let obj2 = {};
+  for (let i = 0; i < arr1.length; i++) {
+    obj1[arr1[i]] = (arr1[i] || 0) + 1;
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    obj2[Math.sqrt(arr2[i])] = (arr2[i] || 0) + 1;
+  }
+  for (let key in obj1) {
+    if (!obj2[key]) return false;
+  }
+  return true;
+}
+
+console.log(countFreq_3(arr1, arr2));
