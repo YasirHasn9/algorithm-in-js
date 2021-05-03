@@ -38,5 +38,26 @@ function findSubArrays(arr, num) {
   return max;
 }
 
-console.log(findSubArrays([2, 6, 9, 2, 1, 8, 5, 6], 3));
+// console.log(findSubArrays([2, 6, 9, 2, 1, 8, 5, 6], 3));
 // console.log("hello");
+function findSubArrays_opt(arr, num) {
+  // edge cases
+  // if num > arr.length
+  if (num > arr.length) return null;
+  // define 2 vars
+  // one holds the current max num
+  // one temp to hold the value of the max for var for each iteration
+  let maxSum = 0,
+    temp = 0;
+  // iterate num times to sum  the max for the first num numbers in th array
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+  temp = maxSum;
+  for (let j = num; j < arr.length; j++) {
+    temp = temp - arr[j - num] + arr[j];
+    maxSum = Math.max(maxSum, temp);
+  }
+  return maxSum;
+}
+console.log(findSubArrays_opt([2, 6, 9, 2, 1, 8, 5, 6], 3));
